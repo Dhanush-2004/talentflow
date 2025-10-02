@@ -39,7 +39,7 @@ function App() {
     <ThemeProvider>
       <AuthProvider>
         <ToastProvider>
-          <div className="min-h-screen bg-orange-50">
+          <div className="min-h-screen bg-white">
             <Routes>
             {/* --- Public Routes --- */}
             <Route path="/" element={<HomePage />} />

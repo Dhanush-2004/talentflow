@@ -11,7 +11,12 @@ const RecruiterPortal: React.FC = () => {
   React.useEffect(() => {
     // Only redirect if we're done loading and the user is definitely not a recruiter
     if (!loading && user && user.role !== 'recruiter') {
-      navigate('/dashboard');
+      // Redirect to appropriate dashboard based on role
+      if (user.role === 'candidate') {
+        navigate('/employee/dashboard');
+      } else {
+        navigate('/dashboard');
+      }
     }
   }, [user, loading, navigate]);
 
@@ -32,12 +37,16 @@ const RecruiterPortal: React.FC = () => {
 
   // If user is not a recruiter, redirect to appropriate dashboard
   if (user.role !== 'recruiter') {
-    navigate('/dashboard');
+    if (user.role === 'candidate') {
+      navigate('/employee/dashboard');
+    } else {
+      navigate('/dashboard');
+    }
     return null;
   }
 
   return (
-    <div className="flex h-screen bg-orange-50">
+    <div className="flex h-screen bg-gray-50">
       <Sidebar />
       <main className="flex-1 overflow-y-auto">
         <div className="p-8">
