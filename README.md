@@ -11,7 +11,6 @@ A modern React-based hiring platform with role-based access for recruiters and c
 
 ### Recruiter Portal
 - **Jobs Management**: Create, edit, archive, reorder jobs with drag-and-drop
-- **Candidate Pipeline**: Virtualized list of 1000+ candidates with search/filtering
 - **Kanban Board**: Drag-and-drop candidate stages with @mention notes
 - **Assessment Builder**: Create custom assessments with multiple question types
 - **Dashboard**: Real-time stats and recent activity
