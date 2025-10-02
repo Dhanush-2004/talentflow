@@ -230,13 +230,6 @@ This project is licensed under the MIT License.
 4. Test thoroughly
 5. Submit a pull request
 
-## 📞 Support
 
-For questions or issues:
-- Check the troubleshooting section
-- Review the code comments
-- Open an issue in the repository
-
----
 
 **TalentFlow** - Streamlining the hiring process with modern web technologies.
