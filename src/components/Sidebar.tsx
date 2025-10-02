@@ -30,9 +30,9 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <aside className="w-64 flex-shrink-0 bg-white border-r border-gray-200 flex flex-col dark:bg-gray-800 dark:border-gray-700">
+    <aside className="w-64 flex-shrink-0 bg-white border-r border-gray-200 flex flex-col">
       <div className="p-6">
-        <Link to="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+        <Link to="/" className="text-2xl font-bold text-blue-600 ">
           TalentFlow
         </Link>
         <div className="text-xs text-gray-500 mt-1">Recruiter Portal</div>
@@ -57,8 +57,8 @@ const Sidebar: React.FC = () => {
             className={({ isActive }) =>
               `flex items-center space-x-3 p-3 rounded-lg transition-colors text-sm font-medium ${
                 isActive
-                  ? 'bg-blue-50 text-blue-600 dark:bg-blue-900 dark:text-white'
-                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
+                  ? 'bg-blue-50 text-blue-600  '
+                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900  :bg-gray-700 :text-white'
               }`
             }
           >
@@ -68,15 +68,15 @@ const Sidebar: React.FC = () => {
         ))}
       </nav>
 
-      <div className="p-4 mt-auto border-t border-gray-200 dark:border-gray-700">
+      <div className="p-4 mt-auto border-t border-gray-200 ">
         <Link to="/recruiter/profile" className="block mb-4">
-          <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer">
+          <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 :bg-gray-700 transition-colors cursor-pointer">
             <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
               <span className="text-white font-medium">{user?.name?.charAt(0).toUpperCase()}</span>
             </div>
             <div>
-              <p className="text-sm font-semibold text-gray-900 dark:text-white">{user?.name}</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400">Recruiter</p>
+              <p className="text-sm font-semibold text-gray-900 ">{user?.name}</p>
+              <p className="text-xs text-gray-500 ">Recruiter</p>
             </div>
           </div>
         </Link>

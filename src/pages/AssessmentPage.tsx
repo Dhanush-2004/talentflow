@@ -195,8 +195,8 @@ const AssessmentPage: React.FC = () => {
     return (
       <div className="text-center py-12">
         <AlertCircle className="mx-auto h-12 w-12 text-red-400" />
-        <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">Assessment not found</h3>
-        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+        <h3 className="mt-2 text-sm font-medium text-gray-900 ">Assessment not found</h3>
+        <p className="mt-1 text-sm text-gray-500 ">
           The assessment you're looking for doesn't exist or has been removed.
         </p>
         <div className="mt-6">
@@ -218,36 +218,36 @@ const AssessmentPage: React.FC = () => {
           </Link>
                 </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-8">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-8">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-3xl font-bold text-gray-900  mb-4">
               {assessment.title}
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-lg text-gray-600  mb-8">
               {assessment.description}
             </p>
             
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+              <div className="bg-blue-50  rounded-lg p-4">
                 <Clock className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                <h3 className="font-semibold text-gray-900 dark:text-white">Duration</h3>
-                <p className="text-gray-600 dark:text-gray-400">{assessment.duration} minutes</p>
+                <h3 className="font-semibold text-gray-900 ">Duration</h3>
+                <p className="text-gray-600 ">{assessment.duration} minutes</p>
               </div>
-              <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+              <div className="bg-green-50  rounded-lg p-4">
                 <FileText className="h-8 w-8 text-green-600 mx-auto mb-2" />
-                <h3 className="font-semibold text-gray-900 dark:text-white">Questions</h3>
-                <p className="text-gray-600 dark:text-gray-400">{assessment.questions.length} questions</p>
+                <h3 className="font-semibold text-gray-900 ">Questions</h3>
+                <p className="text-gray-600 ">{assessment.questions.length} questions</p>
                 </div>
-              <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4">
+              <div className="bg-purple-50  rounded-lg p-4">
                 <CheckCircle className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-                <h3 className="font-semibold text-gray-900 dark:text-white">Passing Score</h3>
-                <p className="text-gray-600 dark:text-gray-400">{assessment.passingScore}%</p>
+                <h3 className="font-semibold text-gray-900 ">Passing Score</h3>
+                <p className="text-gray-600 ">{assessment.passingScore}%</p>
               </div>
             </div>
 
-            <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4 mb-8">
-              <h3 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Instructions:</h3>
-              <ul className="text-left text-yellow-700 dark:text-yellow-300 space-y-1">
+            <div className="bg-yellow-50  border border-yellow-200  rounded-lg p-4 mb-8">
+              <h3 className="font-semibold text-yellow-800  mb-2">Instructions:</h3>
+              <ul className="text-left text-yellow-700  space-y-1">
                 <li>• You have {assessment.duration} minutes to complete this assessment</li>
                 <li>• Answer all questions to the best of your ability</li>
                 <li>• You can navigate between questions using the Previous/Next buttons</li>
@@ -269,12 +269,12 @@ const AssessmentPage: React.FC = () => {
   if (isCompleted) {
     return (
       <div className="max-w-4xl mx-auto">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-8">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-8">
                 <div className="text-center">
             <div className={`mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-4 ${
               score && score >= assessment.passingScore 
-                ? 'bg-green-100 dark:bg-green-900/20' 
-                : 'bg-red-100 dark:bg-red-900/20'
+                ? 'bg-green-100 ' 
+                : 'bg-red-100 '
             }`}>
               {score && score >= assessment.passingScore ? (
                 <CheckCircle className="h-8 w-8 text-green-600" />
@@ -283,7 +283,7 @@ const AssessmentPage: React.FC = () => {
               )}
             </div>
             
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-3xl font-bold text-gray-900  mb-4">
               Assessment Completed!
             </h1>
             
@@ -293,7 +293,7 @@ const AssessmentPage: React.FC = () => {
               </span>
             </div>
             
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-lg text-gray-600  mb-8">
               {score && score >= assessment.passingScore 
                 ? `Congratulations! You passed the assessment.`
                 : `You need ${assessment.passingScore}% to pass. Better luck next time!`
@@ -324,13 +324,13 @@ const AssessmentPage: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto">
       {/* Header */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 mb-6">
+      <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-4 mb-6">
         <div className="flex items-center justify-between">
             <div>
-            <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h1 className="text-xl font-semibold text-gray-900 ">
               {assessment.title}
             </h1>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray-600 ">
               Question {currentQuestion + 1} of {assessment.questions.length}
             </p>
             </div>
@@ -342,7 +342,7 @@ const AssessmentPage: React.FC = () => {
           </div>
         </div>
         <div className="mt-4">
-          <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+          <div className="bg-gray-200  rounded-full h-2">
             <div 
               className="bg-blue-600 h-2 rounded-full transition-all duration-300"
               style={{ width: `${progress}%` }}
@@ -352,12 +352,12 @@ const AssessmentPage: React.FC = () => {
               </div>
 
       {/* Question */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6">
+      <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6 mb-6">
         <div className="mb-6">
-          <h2 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
+          <h2 className="text-lg font-medium text-gray-900  mb-4">
             {currentQ.question}
           </h2>
-          <div className="text-sm text-gray-500 dark:text-gray-400">
+          <div className="text-sm text-gray-500 ">
             Points: {currentQ.points} | Type: {currentQ.type}
             </div>
         </div>
@@ -366,7 +366,7 @@ const AssessmentPage: React.FC = () => {
           {currentQ.type === 'multiple-choice' && currentQ.options && (
                     <div className="space-y-3">
               {currentQ.options.map((option, index) => (
-                <label key={index} className="flex items-center p-3 border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
+                <label key={index} className="flex items-center p-3 border border-gray-200  rounded-lg hover:bg-gray-50 :bg-gray-700 cursor-pointer">
                   <input
                     type="radio"
                     name={`question-${currentQ.id}`}
@@ -375,7 +375,7 @@ const AssessmentPage: React.FC = () => {
                     onChange={() => handleAnswerChange(currentQ.id, index)}
                     className="mr-3"
                   />
-                  <span className="text-gray-900 dark:text-white">{option}</span>
+                  <span className="text-gray-900 ">{option}</span>
                             </label>
                         ))}
                     </div>
@@ -387,13 +387,13 @@ const AssessmentPage: React.FC = () => {
               onChange={(e) => handleAnswerChange(currentQ.id, e.target.value)}
               placeholder="Enter your answer here..."
               rows={6}
-              className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+              className="w-full p-3 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
             />
           )}
 
           {currentQ.type === 'rating' && (
             <div className="space-y-3">
-              <p className="text-sm text-gray-600 dark:text-gray-400">Rate from 1 to 5:</p>
+              <p className="text-sm text-gray-600 ">Rate from 1 to 5:</p>
               <div className="flex space-x-2">
                 {[1, 2, 3, 4, 5].map((rating) => (
                   <button
@@ -402,7 +402,7 @@ const AssessmentPage: React.FC = () => {
                     className={`w-12 h-12 rounded-full border-2 flex items-center justify-center font-semibold ${
                       answers[currentQ.id] === rating
                         ? 'border-blue-500 bg-blue-500 text-white'
-                        : 'border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-300'
+                        : 'border-gray-300  text-gray-700  hover:border-blue-300'
                     }`}
                   >
                     {rating}
@@ -414,13 +414,13 @@ const AssessmentPage: React.FC = () => {
 
           {currentQ.type === 'integer' && (
             <div className="space-y-3">
-              <p className="text-sm text-gray-600 dark:text-gray-400">Enter a number:</p>
+              <p className="text-sm text-gray-600 ">Enter a number:</p>
               <input
                 type="number"
                 value={answers[currentQ.id] || ''}
                 onChange={(e) => handleAnswerChange(currentQ.id, e.target.value)}
                 placeholder="Enter your answer..."
-                className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                className="w-full p-3 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
               />
             </div>
           )}
@@ -428,7 +428,7 @@ const AssessmentPage: React.FC = () => {
       </div>
 
       {/* Navigation */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4">
+      <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-4">
         <div className="flex justify-between items-center">
           <Button
             variant="outline"

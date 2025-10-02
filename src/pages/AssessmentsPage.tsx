@@ -161,8 +161,8 @@ const AssessmentsPage: React.FC = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Assessments</h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <h1 className="text-2xl font-bold text-gray-900 ">Assessments</h1>
+          <p className="text-gray-600 ">
             Create and manage skill assessments for your candidates
           </p>
           
@@ -170,7 +170,7 @@ const AssessmentsPage: React.FC = () => {
       </div>
 
       {/* Filters */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+      <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <div className="relative">
@@ -180,7 +180,7 @@ const AssessmentsPage: React.FC = () => {
                 placeholder="Search assessments..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
               />
             </div>
           </div>
@@ -188,7 +188,7 @@ const AssessmentsPage: React.FC = () => {
             <select
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+              className="w-full px-4 py-2 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
             >
               <option value="all">All Types</option>
               <option value="technical">Technical</option>
@@ -201,70 +201,70 @@ const AssessmentsPage: React.FC = () => {
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Assessments</p>
-              <p className="text-2xl font-bold text-gray-900 dark:text-white">{assessments.length}</p>
+              <p className="text-sm font-medium text-gray-600 ">Total Assessments</p>
+              <p className="text-2xl font-bold text-gray-900 ">{assessments.length}</p>
             </div>
-            <div className="h-8 w-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
-              <span className="text-blue-600 dark:text-blue-400 text-sm font-medium">TA</span>
+            <div className="h-8 w-8 bg-blue-100  rounded-lg flex items-center justify-center">
+              <span className="text-blue-600  text-sm font-medium">TA</span>
             </div>
           </div>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Active</p>
-              <p className="text-2xl font-bold text-gray-900 dark:text-white">
+              <p className="text-sm font-medium text-gray-600 ">Active</p>
+              <p className="text-2xl font-bold text-gray-900 ">
                 {assessments.filter(a => a.status === 'active').length}
               </p>
             </div>
-            <div className="h-8 w-8 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
-              <span className="text-green-600 dark:text-green-400 text-sm font-medium">AC</span>
+            <div className="h-8 w-8 bg-green-100  rounded-lg flex items-center justify-center">
+              <span className="text-green-600  text-sm font-medium">AC</span>
             </div>
           </div>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Drafts</p>
-              <p className="text-2xl font-bold text-gray-900 dark:text-white">
+              <p className="text-sm font-medium text-gray-600 ">Drafts</p>
+              <p className="text-2xl font-bold text-gray-900 ">
                 {assessments.filter(a => a.status === 'draft').length}
               </p>
             </div>
-            <div className="h-8 w-8 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center">
-              <span className="text-yellow-600 dark:text-yellow-400 text-sm font-medium">DR</span>
+            <div className="h-8 w-8 bg-yellow-100  rounded-lg flex items-center justify-center">
+              <span className="text-yellow-600  text-sm font-medium">DR</span>
             </div>
           </div>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Completions</p>
-              <p className="text-2xl font-bold text-gray-900 dark:text-white">
+              <p className="text-sm font-medium text-gray-600 ">Total Completions</p>
+              <p className="text-2xl font-bold text-gray-900 ">
                 {assessments.reduce((sum, a) => sum + a.completedBy, 0)}
               </p>
             </div>
-            <div className="h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center">
-              <span className="text-purple-600 dark:text-purple-400 text-sm font-medium">TC</span>
+            <div className="h-8 w-8 bg-purple-100  rounded-lg flex items-center justify-center">
+              <span className="text-purple-600  text-sm font-medium">TC</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Assessment Actions */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+      <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="flex flex-col sm:flex-row gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-700  mb-2">
                 Filter by Type
               </label>
               <select
                 value={filterType}
                 onChange={(e) => setFilterType(e.target.value)}
-                className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                className="px-3 py-2 border border-gray-300  rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
               >
                 <option value="all">All Types</option>
                 <option value="technical">Technical</option>
@@ -291,13 +291,13 @@ const AssessmentsPage: React.FC = () => {
       {/* Assessment Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredAssessments.map((assessment) => (
-          <div key={assessment.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div key={assessment.id} className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-lg font-semibold text-gray-900  mb-2">
                   {assessment.title}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                <p className="text-sm text-gray-600  mb-3">
                   {assessment.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-3">
@@ -313,16 +313,16 @@ const AssessmentsPage: React.FC = () => {
             
             <div className="space-y-2 mb-4">
               <div className="flex justify-between text-sm">
-                <span className="text-gray-500 dark:text-gray-400">Questions:</span>
-                <span className="text-gray-900 dark:text-white">{assessment.questions?.length || 0}</span>
+                <span className="text-gray-500 ">Questions:</span>
+                <span className="text-gray-900 ">{assessment.questions?.length || 0}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-500 dark:text-gray-400">Duration:</span>
-                <span className="text-gray-900 dark:text-white">{assessment.duration} min</span>
+                <span className="text-gray-500 ">Duration:</span>
+                <span className="text-gray-900 ">{assessment.duration} min</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-500 dark:text-gray-400">Completions:</span>
-                <span className="text-gray-900 dark:text-white">{assessment.completedBy}</span>
+                <span className="text-gray-500 ">Completions:</span>
+                <span className="text-gray-900 ">{assessment.completedBy}</span>
               </div>
             </div>
             
@@ -359,8 +359,8 @@ const AssessmentsPage: React.FC = () => {
           <div className="mx-auto h-12 w-12 text-gray-400">
             <FileText className="h-12 w-12" />
           </div>
-          <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">No assessments found</h3>
-          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+          <h3 className="mt-2 text-sm font-medium text-gray-900 ">No assessments found</h3>
+          <p className="mt-1 text-sm text-gray-500 ">
             {searchTerm || filterType !== 'all' 
               ? 'Try adjusting your search or filter criteria.'
               : 'Get started by creating your first assessment.'

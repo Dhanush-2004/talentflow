@@ -28,7 +28,7 @@ interface Job {
 
 const StatCard: React.FC<{ title: string; value: number; icon: React.ReactNode }> = 
   ({ title, value, icon }) => (
-  <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
+  <div className="bg-white  overflow-hidden shadow rounded-lg">
     <div className="p-5">
       <div className="flex items-center">
         <div className="flex-shrink-0">
@@ -36,10 +36,10 @@ const StatCard: React.FC<{ title: string; value: number; icon: React.ReactNode }
         </div>
         <div className="ml-5 w-0 flex-1">
           <dl>
-            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
+            <dt className="text-sm font-medium text-gray-500  truncate">
               {title}
             </dt>
-            <dd className="text-2xl font-bold text-gray-900 dark:text-white">
+            <dd className="text-2xl font-bold text-gray-900 ">
               {value}
             </dd>
           </dl>
@@ -144,16 +144,16 @@ const RecruiterDashboard: React.FC = () => {
 
   const getCandidateStatusColor = (status: Candidate['status']) => {
     switch (status) {
-      case 'Interview Scheduled': return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
-      case 'Assessment Pending': return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200';
-      case 'Applied': return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
+      case 'Interview Scheduled': return 'bg-green-100 text-green-800  ';
+      case 'Assessment Pending': return 'bg-yellow-100 text-yellow-800  ';
+      case 'Applied': return 'bg-blue-100 text-blue-800  ';
     }
   };
   
   const getJobStatusColor = (status: Job['status']) => {
     return status === 'Active' 
-      ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' 
-      : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200';
+      ? 'bg-green-100 text-green-800  ' 
+      : 'bg-gray-100 text-gray-800  ';
   };
 
   if (loading) {
@@ -161,7 +161,7 @@ const RecruiterDashboard: React.FC = () => {
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">Loading dashboard...</p>
+          <p className="mt-4 text-gray-600 ">Loading dashboard...</p>
         </div>
       </div>
     );
@@ -170,10 +170,10 @@ const RecruiterDashboard: React.FC = () => {
   return (
     <>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+        <h1 className="text-3xl font-bold text-gray-900 ">
           Recruiter Dashboard
         </h1>
-        <p className="mt-1 text-gray-600 dark:text-gray-400">
+        <p className="mt-1 text-gray-600 ">
           Welcome back, {user?.name}! Here's your recruitment pipeline at a glance.
         </p>
       </div>
@@ -187,26 +187,26 @@ const RecruiterDashboard: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Recent Candidates */}
-        <div className="bg-white dark:bg-gray-800 shadow rounded-lg">
+        <div className="bg-white  shadow rounded-lg">
           <div className="px-4 py-5 sm:p-6">
             <div className="flex items-center justify-between mb-5">
-              <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-white">
+              <h3 className="text-lg leading-6 font-medium text-gray-900 ">
                 Recent Candidates
               </h3>
-              <Link to="/recruiter/candidates" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium">
+              <Link to="/recruiter/candidates" className="text-blue-600 hover:text-blue-800  :text-blue-300 text-sm font-medium">
                 View all →
               </Link>
             </div>
             <div className="space-y-4">
               {recentCandidates.map((candidate) => (
-                <div key={candidate.id} className="flex items-center justify-between p-3 border border-gray-200 dark:border-gray-700 rounded-lg">
+                <div key={candidate.id} className="flex items-center justify-between p-3 border border-gray-200  rounded-lg">
                   <div className="flex items-center">
                     <div className="flex-shrink-0 h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center">
                       <span className="text-sm font-medium text-white">{candidate.name.charAt(0)}</span>
                     </div>
                     <div className="ml-4">
-                      <h4 className="text-sm font-medium text-gray-900 dark:text-white">{candidate.name}</h4>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{candidate.position}</p>
+                      <h4 className="text-sm font-medium text-gray-900 ">{candidate.name}</h4>
+                      <p className="text-sm text-gray-500 ">{candidate.position}</p>
                     </div>
                   </div>
                   <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getCandidateStatusColor(candidate.status)}`}>
@@ -219,22 +219,22 @@ const RecruiterDashboard: React.FC = () => {
         </div>
 
         {/* Recent Jobs */}
-        <div className="bg-white dark:bg-gray-800 shadow rounded-lg">
+        <div className="bg-white  shadow rounded-lg">
           <div className="px-4 py-5 sm:p-6">
             <div className="flex items-center justify-between mb-5">
-              <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-white">
+              <h3 className="text-lg leading-6 font-medium text-gray-900 ">
                 Recent Jobs
               </h3>
-               <Link to="/recruiter/jobs" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium">
+               <Link to="/recruiter/jobs" className="text-blue-600 hover:text-blue-800  :text-blue-300 text-sm font-medium">
                 View all →
               </Link>
             </div>
              <div className="space-y-4">
               {recentJobs.map((job) => (
-                <div key={job.id} className="flex items-center justify-between p-3 border border-gray-200 dark:border-gray-700 rounded-lg">
+                <div key={job.id} className="flex items-center justify-between p-3 border border-gray-200  rounded-lg">
                   <div className="flex-1">
-                    <h4 className="text-sm font-medium text-gray-900 dark:text-white">{job.title}</h4>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{job.applications} applications</p>
+                    <h4 className="text-sm font-medium text-gray-900 ">{job.title}</h4>
+                    <p className="text-sm text-gray-500 ">{job.applications} applications</p>
                   </div>
                   <div className="ml-4">
                     <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getJobStatusColor(job.status)}`}>

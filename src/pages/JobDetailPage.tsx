@@ -131,8 +131,8 @@ const JobDetailPage: React.FC = () => {
   if (!job) {
     return (
       <div className="text-center py-12">
-        <h3 className="text-lg font-medium text-gray-900 dark:text-white">Job not found</h3>
-        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+        <h3 className="text-lg font-medium text-gray-900 ">Job not found</h3>
+        <p className="mt-1 text-sm text-gray-500 ">
           The job you're looking for doesn't exist or has been removed.
         </p>
         <div className="mt-6">
@@ -170,33 +170,33 @@ const JobDetailPage: React.FC = () => {
       </div>
 
       {/* Job Details Card */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+      <div className="bg-white  rounded-lg shadow-sm border border-gray-200 ">
         {/* Job Header */}
-        <div className="px-6 py-6 border-b border-gray-200 dark:border-gray-700">
+        <div className="px-6 py-6 border-b border-gray-200 ">
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+              <h1 className="text-3xl font-bold text-gray-900  mb-2">
                 {job.title}
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-xl text-gray-600  mb-4">
                 {job.company}
               </p>
               
               {/* Job Info Grid */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
-                <div className="flex items-center text-gray-600 dark:text-gray-400">
+                <div className="flex items-center text-gray-600 ">
                   <MapPin className="h-5 w-5 mr-2" />
                   <span>{job.location}</span>
                 </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-400">
+                <div className="flex items-center text-gray-600 ">
                   <Clock className="h-5 w-5 mr-2" />
                   <span>{job.type}</span>
                 </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-400">
+                <div className="flex items-center text-gray-600 ">
                   <DollarSign className="h-5 w-5 mr-2" />
                   <span>{formatSalary(job.salary)}</span>
                 </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-400">
+                <div className="flex items-center text-gray-600 ">
                   <Users className="h-5 w-5 mr-2" />
                   <span>{job.applicationsCount || 0} applications</span>
                 </div>
@@ -208,7 +208,7 @@ const JobDetailPage: React.FC = () => {
                   {job.tags.map((tag: string, index: number) => (
                     <span 
                       key={index}
-                      className="inline-flex px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                      className="inline-flex px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800  "
                     >
                       {tag}
                     </span>
@@ -240,14 +240,14 @@ const JobDetailPage: React.FC = () => {
         <div className="px-6 py-6">
           {/* Description */}
           <div className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-xl font-semibold text-gray-900  mb-4">
               Job Description
             </h2>
-            <div className="prose max-w-none text-gray-600 dark:text-gray-400">
+            <div className="prose max-w-none text-gray-600 ">
               {job.description.split('\n').map((line: string, index: number) => {
                 if (line.startsWith('## ')) {
                   return (
-                    <h3 key={index} className="text-lg font-semibold text-gray-900 dark:text-white mt-6 mb-3">
+                    <h3 key={index} className="text-lg font-semibold text-gray-900  mt-6 mb-3">
                       {line.replace('## ', '')}
                     </h3>
                   )
@@ -273,12 +273,12 @@ const JobDetailPage: React.FC = () => {
           {/* Requirements */}
           {job.requirements && job.requirements.length > 0 && (
             <div className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-xl font-semibold text-gray-900  mb-4">
                 Requirements
               </h2>
               <ul className="space-y-2">
                 {job.requirements.map((req: string, index: number) => (
-                  <li key={index} className="flex items-start text-gray-600 dark:text-gray-400">
+                  <li key={index} className="flex items-start text-gray-600 ">
                     <span className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></span>
                     {req}
                   </li>
@@ -290,12 +290,12 @@ const JobDetailPage: React.FC = () => {
           {/* Benefits */}
           {job.benefits && job.benefits.length > 0 && (
             <div className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-xl font-semibold text-gray-900  mb-4">
                 Benefits
               </h2>
               <ul className="space-y-2">
                 {job.benefits.map((benefit: string, index: number) => (
-                  <li key={index} className="flex items-start text-gray-600 dark:text-gray-400">
+                  <li key={index} className="flex items-start text-gray-600 ">
                     <span className="flex-shrink-0 w-2 h-2 bg-green-600 rounded-full mt-2 mr-3"></span>
                     {benefit}
                   </li>
@@ -308,13 +308,13 @@ const JobDetailPage: React.FC = () => {
 
       {/* Job Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Users className="h-8 w-8 text-blue-600" />
             </div>
             <div className="ml-4">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+              <h3 className="text-lg font-medium text-gray-900 ">
                 Applications
               </h3>
               <p className="text-2xl font-bold text-blue-600">
@@ -324,13 +324,13 @@ const JobDetailPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Eye className="h-8 w-8 text-green-600" />
             </div>
             <div className="ml-4">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+              <h3 className="text-lg font-medium text-gray-900 ">
                 Views
               </h3>
               <p className="text-2xl font-bold text-green-600">
@@ -340,16 +340,16 @@ const JobDetailPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Clock className="h-8 w-8 text-purple-600" />
             </div>
             <div className="ml-4">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+              <h3 className="text-lg font-medium text-gray-900 ">
                 Posted
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-gray-600 ">
                 {new Date(job.postedAt).toLocaleDateString()}
               </p>
             </div>

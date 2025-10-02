@@ -249,13 +249,13 @@ const AssessmentBuilder: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Assessment Builder</h1>
-        <p className="text-gray-600 dark:text-gray-400 mt-2">Create custom assessments for candidates.</p>
+        <h1 className="text-3xl font-bold text-gray-900 ">Assessment Builder</h1>
+        <p className="text-gray-600  mt-2">Create custom assessments for candidates.</p>
       </div>
 
       {/* Job Selection */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Select Job</h2>
+      <div className="bg-white  rounded-xl shadow-sm border border-gray-200  p-6 mb-6">
+        <h2 className="text-xl font-bold text-gray-900  mb-4">Select Job</h2>
         {availableJobs.length === 0 ? (
           <div className="text-center py-8">
             <Briefcase className="h-12 w-12 text-gray-400 mx-auto mb-4" />
@@ -269,13 +269,13 @@ const AssessmentBuilder: React.FC = () => {
                 onClick={() => handleJobSelection(job)}
                 className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
                   selectedJob?.id === job.id
-                    ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
-                    : 'border-gray-200 dark:border-gray-600 hover:border-blue-300'
+                    ? 'border-blue-500 bg-blue-50 '
+                    : 'border-gray-200  hover:border-blue-300'
                 }`}
               >
-                <h3 className="font-semibold text-gray-900 dark:text-white">{job.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{job.company}</p>
-                <p className="text-xs text-gray-500 dark:text-gray-500">{job.location}</p>
+                <h3 className="font-semibold text-gray-900 ">{job.title}</h3>
+                <p className="text-sm text-gray-600 ">{job.company}</p>
+                <p className="text-xs text-gray-500 ">{job.location}</p>
                 <span className={`inline-block px-2 py-1 text-xs rounded-full mt-2 ${
                   job.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
                 }`}>
@@ -286,8 +286,8 @@ const AssessmentBuilder: React.FC = () => {
           </div>
         )}
         {selectedJob && (
-          <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-            <p className="text-sm text-blue-800 dark:text-blue-200">
+          <div className="mt-4 p-4 bg-blue-50  rounded-lg">
+            <p className="text-sm text-blue-800 ">
               Selected: <strong>{selectedJob.title}</strong> at {selectedJob.company}
             </p>
           </div>
@@ -295,29 +295,29 @@ const AssessmentBuilder: React.FC = () => {
       </div>
 
       {/* Assessment Settings */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Assessment Settings</h2>
+      <div className="bg-white  rounded-xl shadow-sm border border-gray-200  p-6 mb-6">
+        <h2 className="text-xl font-bold text-gray-900  mb-4">Assessment Settings</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700  mb-2">
               Title *
             </label>
             <input
               type="text"
               value={assessment.title}
               onChange={(e) => setAssessment(prev => ({ ...prev, title: e.target.value }))}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-300  bg-white  rounded-lg focus:ring-2 focus:ring-blue-500"
               placeholder="Assessment title"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700  mb-2">
               Type
             </label>
             <select
               value={assessment.type}
               onChange={(e) => setAssessment(prev => ({ ...prev, type: e.target.value }))}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-300  bg-white  rounded-lg focus:ring-2 focus:ring-blue-500"
             >
               <option value="technical">Technical</option>
               <option value="behavioral">Behavioral</option>
@@ -325,36 +325,36 @@ const AssessmentBuilder: React.FC = () => {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700  mb-2">
               Duration (minutes)
             </label>
             <input
               type="number"
               value={assessment.duration}
               onChange={(e) => setAssessment(prev => ({ ...prev, duration: parseInt(e.target.value) || 60 }))}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-300  bg-white  rounded-lg focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700  mb-2">
               Passing Score (%)
             </label>
             <input
               type="number"
               value={assessment.passingScore}
               onChange={(e) => setAssessment(prev => ({ ...prev, passingScore: parseInt(e.target.value) || 70 }))}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-300  bg-white  rounded-lg focus:ring-2 focus:ring-blue-500"
             />
           </div>
         </div>
         <div className="mt-4">
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label className="block text-sm font-medium text-gray-700  mb-2">
             Description
           </label>
           <textarea
             value={assessment.description}
             onChange={(e) => setAssessment(prev => ({ ...prev, description: e.target.value }))}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 border border-gray-300  bg-white  rounded-lg focus:ring-2 focus:ring-blue-500"
             rows={3}
             placeholder="Assessment description"
           />
@@ -362,18 +362,18 @@ const AssessmentBuilder: React.FC = () => {
       </div>
 
       {/* Question Builder */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Add Question</h2>
+      <div className="bg-white  rounded-xl shadow-sm border border-gray-200  p-6 mb-6">
+        <h2 className="text-xl font-bold text-gray-900  mb-4">Add Question</h2>
         
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700  mb-2">
               Question Type
             </label>
             <select
               value={currentQuestion.type}
               onChange={(e) => setCurrentQuestion(prev => ({ ...prev, type: e.target.value as any }))}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-300  bg-white  rounded-lg focus:ring-2 focus:ring-blue-500"
             >
               <option value="multiple-choice">Multiple Choice</option>
               <option value="text">Text Answer</option>
@@ -382,13 +382,13 @@ const AssessmentBuilder: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700  mb-2">
               Question *
             </label>
             <textarea
               value={currentQuestion.question}
               onChange={(e) => setCurrentQuestion(prev => ({ ...prev, question: e.target.value }))}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-3 border border-gray-300  bg-white  rounded-lg focus:ring-2 focus:ring-blue-500"
               rows={3}
               placeholder="Enter your question"
             />
@@ -396,18 +396,18 @@ const AssessmentBuilder: React.FC = () => {
 
           {currentQuestion.type === 'multiple-choice' && (
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-700  mb-2">
                 Options <span className="text-red-500">*</span>
               </label>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+              <p className="text-sm text-gray-500  mb-3">
                 Select the correct answer by clicking the radio button next to the right option
               </p>
               <div className="space-y-2">
                 {currentQuestion.options?.map((option, index) => (
                   <div key={index} className={`flex items-center gap-3 p-3 rounded-lg border-2 transition-colors ${
                     currentQuestion.correctAnswer === index 
-                      ? 'border-green-500 bg-green-50 dark:bg-green-900/20' 
-                      : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500'
+                      ? 'border-green-500 bg-green-50 ' 
+                      : 'border-gray-200  hover:border-gray-300 :border-gray-500'
                   }`}>
                     <div className="flex items-center gap-2">
                       <input
@@ -419,8 +419,8 @@ const AssessmentBuilder: React.FC = () => {
                       />
                       <span className={`text-sm font-medium ${
                         currentQuestion.correctAnswer === index 
-                          ? 'text-green-700 dark:text-green-300' 
-                          : 'text-gray-500 dark:text-gray-400'
+                          ? 'text-green-700 ' 
+                          : 'text-gray-500 '
                       }`}>
                         {currentQuestion.correctAnswer === index ? '✓ Correct Answer' : 'Select as correct'}
                       </span>
@@ -431,8 +431,8 @@ const AssessmentBuilder: React.FC = () => {
                       onChange={(e) => updateQuestionOption(index, e.target.value)}
                       className={`flex-1 px-3 py-2 border rounded-lg focus:ring-2 ${
                         currentQuestion.correctAnswer === index
-                          ? 'border-green-300 dark:border-green-600 bg-white dark:bg-gray-700 focus:ring-green-500'
-                          : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:ring-blue-500'
+                          ? 'border-green-300  bg-white  focus:ring-green-500'
+                          : 'border-gray-300  bg-white  focus:ring-blue-500'
                       }`}
                       placeholder={`Option ${index + 1}`}
                     />
@@ -454,8 +454,8 @@ const AssessmentBuilder: React.FC = () => {
               </div>
               
               {currentQuestion.correctAnswer === undefined && (
-                <div className="mt-2 p-2 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-md">
-                  <p className="text-sm text-yellow-800 dark:text-yellow-200">
+                <div className="mt-2 p-2 bg-yellow-50  border border-yellow-200  rounded-md">
+                  <p className="text-sm text-yellow-800 ">
                     ⚠️ Please select the correct answer before adding this question
                   </p>
                 </div>
@@ -465,25 +465,25 @@ const AssessmentBuilder: React.FC = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-700  mb-2">
                 Points
               </label>
               <input
                 type="number"
                 value={currentQuestion.points}
                 onChange={(e) => setCurrentQuestion(prev => ({ ...prev, points: parseInt(e.target.value) || 5 }))}
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border border-gray-300  bg-white  rounded-lg focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-700  mb-2">
                 Time Limit (seconds)
               </label>
               <input
                 type="number"
                 value={currentQuestion.timeLimit}
                 onChange={(e) => setCurrentQuestion(prev => ({ ...prev, timeLimit: parseInt(e.target.value) || 120 }))}
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 border border-gray-300  bg-white  rounded-lg focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>
@@ -497,13 +497,13 @@ const AssessmentBuilder: React.FC = () => {
 
       {/* Questions List */}
       {assessment.questions.length > 0 && (
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="bg-white  rounded-xl shadow-sm border border-gray-200  p-6 mb-6">
+          <h2 className="text-xl font-bold text-gray-900  mb-4">
             Questions ({assessment.questions.length})
           </h2>
           <div className="space-y-4">
             {assessment.questions.map((question, index) => (
-              <div key={question.id} className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+              <div key={question.id} className="border border-gray-200  rounded-lg p-4">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
@@ -514,7 +514,7 @@ const AssessmentBuilder: React.FC = () => {
                         {question.points} points • {question.timeLimit}s
                       </span>
                     </div>
-                    <h4 className="font-medium text-gray-900 dark:text-white mb-2">
+                    <h4 className="font-medium text-gray-900  mb-2">
                       {index + 1}. {question.question}
                     </h4>
                     {question.type === 'multiple-choice' && question.options && (
@@ -522,8 +522,8 @@ const AssessmentBuilder: React.FC = () => {
                         {question.options.map((option, optIndex) => (
                           <div key={optIndex} className={`flex items-center gap-2 p-2 rounded-md ${
                             question.correctAnswer === optIndex 
-                              ? 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800' 
-                              : 'bg-gray-50 dark:bg-gray-800'
+                              ? 'bg-green-50  border border-green-200 ' 
+                              : 'bg-gray-50 '
                           }`}>
                             <input
                               type="radio"
@@ -533,12 +533,12 @@ const AssessmentBuilder: React.FC = () => {
                             />
                             <span className={`text-sm ${
                               question.correctAnswer === optIndex 
-                                ? 'font-semibold text-green-700 dark:text-green-300' 
-                                : 'text-gray-600 dark:text-gray-400'
+                                ? 'font-semibold text-green-700 ' 
+                                : 'text-gray-600 '
                             }`}>
                               {option}
                               {question.correctAnswer === optIndex && (
-                                <span className="ml-2 text-xs bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200 px-2 py-1 rounded-full">
+                                <span className="ml-2 text-xs bg-green-100  text-green-800  px-2 py-1 rounded-full">
                                   ✓ Correct Answer
                                 </span>
                               )}

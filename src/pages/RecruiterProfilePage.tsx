@@ -252,10 +252,10 @@ const RecruiterProfilePage: React.FC = () => {
     <div>
       {/* Page Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+        <h1 className="text-3xl font-bold text-gray-900 ">
           Profile Settings
         </h1>
-        <p className="mt-1 text-gray-600 dark:text-gray-400">
+        <p className="mt-1 text-gray-600 ">
           Manage your profile information and account settings.
         </p>
         {successMessage && (
@@ -268,7 +268,7 @@ const RecruiterProfilePage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Sidebar Navigation */}
         <div className="lg:col-span-1">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
             <div className="space-y-1">
               {tabs.map((tab) => {
                 const Icon = tab.icon;
@@ -278,8 +278,8 @@ const RecruiterProfilePage: React.FC = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                       activeTab === tab.id
-                        ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
-                        : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
+                        ? 'bg-blue-100 text-blue-700  '
+                        : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900  :bg-gray-700 :text-white'
                     }`}
                   >
                     <Icon className="h-4 w-4 mr-3" />
@@ -291,7 +291,7 @@ const RecruiterProfilePage: React.FC = () => {
           </div>
 
           {/* Profile Summary Card */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 mt-6">
+          <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6 mt-6">
             <div className="text-center">
               <div className="relative inline-block">
                 <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
@@ -336,20 +336,20 @@ const RecruiterProfilePage: React.FC = () => {
                   </div>
                 )}
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{user?.name}</h3>
-              <p className="text-gray-600 dark:text-gray-400">{user?.position || user?.role}</p>
-              <p className="text-sm text-gray-500 dark:text-gray-500">{user?.email}</p>
+              <h3 className="text-lg font-semibold text-gray-900 ">{user?.name}</h3>
+              <p className="text-gray-600 ">{user?.position || user?.role}</p>
+              <p className="text-sm text-gray-500 ">{user?.email}</p>
             </div>
           </div>
         </div>
 
         {/* Main Content */}
         <div className="lg:col-span-3">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+          <div className="bg-white  rounded-lg shadow-sm border border-gray-200 ">
             {/* Tab Header */}
-            <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+            <div className="px-6 py-4 border-b border-gray-200 ">
               <div className="flex items-center justify-between">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h2 className="text-xl font-semibold text-gray-900 ">
                   {tabs.find(tab => tab.id === activeTab)?.label} Information
                 </h2>
                 <div className="flex space-x-3">
@@ -391,32 +391,32 @@ const RecruiterProfilePage: React.FC = () => {
                 <div className="space-y-6">
                   {/* Basic Information */}
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Basic Information</h3>
+                    <h3 className="text-lg font-medium text-gray-900  mb-4">Basic Information</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700  mb-2">
                           Full Name
                         </label>
                         <input
                           type="text"
                           value={user?.name || ''}
                           disabled
-                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50   "
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700  mb-2">
                           Email
                         </label>
                         <input
                           type="email"
                           value={user?.email || ''}
                           disabled
-                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50   "
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700  mb-2">
                           Phone Number
                         </label>
                         <input
@@ -435,11 +435,11 @@ const RecruiterProfilePage: React.FC = () => {
                           }}
                           disabled={!isEditing}
                           placeholder="+1 (555) 123-4567"
-                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50   "
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700  mb-2">
                           Location
                         </label>
                         <input
@@ -448,7 +448,7 @@ const RecruiterProfilePage: React.FC = () => {
                           onChange={(e) => setProfile(prev => ({ ...prev, location: e.target.value }))}
                           disabled={!isEditing}
                           placeholder="City, State"
-                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50   "
                         />
                       </div>
                     </div>
@@ -456,7 +456,7 @@ const RecruiterProfilePage: React.FC = () => {
 
                   {/* Bio */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-700  mb-2">
                       Bio
                     </label>
                     <textarea
@@ -465,16 +465,16 @@ const RecruiterProfilePage: React.FC = () => {
                       disabled={!isEditing}
                       rows={4}
                       placeholder="Tell us about yourself, your recruiting experience, and your company..."
-                      className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                      className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50   "
                     />
                   </div>
 
                   {/* Social Links */}
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Social Links</h3>
+                    <h3 className="text-lg font-medium text-gray-900  mb-4">Social Links</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700  mb-2">
                           LinkedIn URL
                         </label>
                         <input
@@ -483,14 +483,14 @@ const RecruiterProfilePage: React.FC = () => {
                           onChange={(e) => setProfile(prev => ({ ...prev, linkedin: e.target.value }))}
                           disabled={!isEditing}
                           placeholder="https://linkedin.com/in/yourprofile"
-                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50   "
                         />
                         {profile.linkedin && !profile.linkedin.startsWith('http') && profile.linkedin.trim() && (
                           <p className="text-xs text-orange-600 mt-1">Please include http:// or https://</p>
                         )}
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700  mb-2">
                           Website
                         </label>
                         <input
@@ -499,7 +499,7 @@ const RecruiterProfilePage: React.FC = () => {
                           onChange={(e) => setProfile(prev => ({ ...prev, website: e.target.value }))}
                           disabled={!isEditing}
                           placeholder="https://yourcompany.com"
-                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50   "
                         />
                         {profile.website && !profile.website.startsWith('http') && profile.website.trim() && (
                           <p className="text-xs text-orange-600 mt-1">Please include http:// or https://</p>
@@ -513,10 +513,10 @@ const RecruiterProfilePage: React.FC = () => {
               {activeTab === 'company' && (
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Company Information</h3>
+                    <h3 className="text-lg font-medium text-gray-900  mb-4">Company Information</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700  mb-2">
                           Company Name
                         </label>
                         <input
@@ -525,18 +525,18 @@ const RecruiterProfilePage: React.FC = () => {
                           onChange={(e) => setProfile(prev => ({ ...prev, company: e.target.value }))}
                           disabled={!isEditing}
                           placeholder="Your company name"
-                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50   "
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700  mb-2">
                           Company Size
                         </label>
                         <select
                           value={profile.companySize}
                           onChange={(e) => setProfile(prev => ({ ...prev, companySize: e.target.value }))}
                           disabled={!isEditing}
-                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50   "
                         >
                           <option value="">Select company size</option>
                           {companySizes.map((size) => (
@@ -545,14 +545,14 @@ const RecruiterProfilePage: React.FC = () => {
                         </select>
                       </div>
                       <div className="md:col-span-2">
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700  mb-2">
                           Industry
                         </label>
                         <select
                           value={profile.industry}
                           onChange={(e) => setProfile(prev => ({ ...prev, industry: e.target.value }))}
                           disabled={!isEditing}
-                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50   "
                         >
                           <option value="">Select industry</option>
                           {industries.map((industry) => (
@@ -572,7 +572,7 @@ const RecruiterProfilePage: React.FC = () => {
                         disabled={!isEditing}
                         className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded disabled:bg-gray-50"
                       />
-                      <label className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                      <label className="ml-2 text-sm text-gray-700 ">
                         I am a hiring manager
                       </label>
                     </div>
@@ -583,7 +583,7 @@ const RecruiterProfilePage: React.FC = () => {
               {activeTab === 'preferences' && (
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Notification Preferences</h3>
+                    <h3 className="text-lg font-medium text-gray-900  mb-4">Notification Preferences</h3>
                     <div className="space-y-4">
                       {[
                         { key: 'emailNotifications', label: 'Email Notifications', description: 'Receive notifications via email' },
@@ -592,10 +592,10 @@ const RecruiterProfilePage: React.FC = () => {
                         { key: 'candidateUpdates', label: 'Candidate Updates', description: 'Notifications about candidate status changes' },
                         { key: 'jobAlerts', label: 'Job Alerts', description: 'Alerts about new job postings' },
                       ].map((pref) => (
-                        <div key={pref.key} className="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+                        <div key={pref.key} className="flex items-center justify-between p-4 border border-gray-200  rounded-lg">
                           <div>
-                            <h4 className="font-medium text-gray-900 dark:text-white">{pref.label}</h4>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">{pref.description}</p>
+                            <h4 className="font-medium text-gray-900 ">{pref.label}</h4>
+                            <p className="text-sm text-gray-500 ">{pref.description}</p>
                           </div>
                           <input
                             type="checkbox"
@@ -620,10 +620,10 @@ const RecruiterProfilePage: React.FC = () => {
               {activeTab === 'privacy' && (
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Privacy Settings</h3>
+                    <h3 className="text-lg font-medium text-gray-900  mb-4">Privacy Settings</h3>
                     <div className="space-y-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700  mb-2">
                           Profile Visibility
                         </label>
                         <select
@@ -636,7 +636,7 @@ const RecruiterProfilePage: React.FC = () => {
                             }
                           }))}
                           disabled={!isEditing}
-                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-50   "
                         >
                           <option value="public">Public</option>
                           <option value="private">Private</option>
@@ -649,10 +649,10 @@ const RecruiterProfilePage: React.FC = () => {
                           { key: 'showPhone', label: 'Show Phone Number', description: 'Display phone on your public profile' },
                           { key: 'allowDirectContact', label: 'Allow Direct Contact', description: 'Let candidates contact you directly' },
                         ].map((setting) => (
-                          <div key={setting.key} className="flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+                          <div key={setting.key} className="flex items-center justify-between p-4 border border-gray-200  rounded-lg">
                             <div>
-                              <h4 className="font-medium text-gray-900 dark:text-white">{setting.label}</h4>
-                              <p className="text-sm text-gray-500 dark:text-gray-400">{setting.description}</p>
+                              <h4 className="font-medium text-gray-900 ">{setting.label}</h4>
+                              <p className="text-sm text-gray-500 ">{setting.description}</p>
                             </div>
                             <input
                               type="checkbox"

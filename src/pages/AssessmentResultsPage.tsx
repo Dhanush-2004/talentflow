@@ -149,9 +149,9 @@ const AssessmentResultsPage: React.FC = () => {
 
   const getScoreColor = (score: number, passingScore: number) => {
     if (score >= passingScore) {
-      return 'text-green-600 bg-green-100 dark:bg-green-900 dark:text-green-300';
+      return 'text-green-600 bg-green-100  ';
     }
-    return 'text-red-600 bg-red-100 dark:bg-red-900 dark:text-red-300';
+    return 'text-red-600 bg-red-100  ';
   };
 
   const getScoreIcon = (score: number, passingScore: number) => {
@@ -177,7 +177,7 @@ const AssessmentResultsPage: React.FC = () => {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-        <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">Loading assessment results...</p>
+        <p className="mt-4 text-sm text-gray-500 ">Loading assessment results...</p>
       </div>
     );
   }
@@ -186,8 +186,8 @@ const AssessmentResultsPage: React.FC = () => {
     return (
       <div className="text-center py-12">
         <AlertCircle className="mx-auto h-12 w-12 text-gray-400" />
-        <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">Assessment not found</h3>
-        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+        <h3 className="mt-2 text-sm font-medium text-gray-900 ">Assessment not found</h3>
+        <p className="mt-1 text-sm text-gray-500 ">
           The assessment you're looking for doesn't exist or has been removed.
         </p>
         <div className="mt-6">
@@ -238,17 +238,17 @@ const AssessmentResultsPage: React.FC = () => {
         </div>
 
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+          <h1 className="text-3xl font-bold text-gray-900  mb-2">
             Assessment Results
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-600  mb-4">
             {assessment.title} • {assessment.jobTitle} at {assessment.company}
           </p>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-500 dark:text-gray-400">
+            <span className="text-sm text-gray-500 ">
               Passing Score: <span className="font-medium">{assessment.passingScore || 70}%</span>
             </span>
-            <span className="text-sm text-gray-500 dark:text-gray-400">
+            <span className="text-sm text-gray-500 ">
               Total Completions: <span className="font-medium">{stats.total}</span>
             </span>
           </div>
@@ -257,56 +257,56 @@ const AssessmentResultsPage: React.FC = () => {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Users className="h-8 w-8 text-blue-600" />
             </div>
             <div className="ml-4">
-              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Total Completions</p>
-              <p className="text-2xl font-semibold text-gray-900 dark:text-white">
+              <p className="text-sm font-medium text-gray-500 ">Total Completions</p>
+              <p className="text-2xl font-semibold text-gray-900 ">
                 {stats.total}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <CheckCircle className="h-8 w-8 text-green-600" />
             </div>
             <div className="ml-4">
-              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Passed</p>
-              <p className="text-2xl font-semibold text-gray-900 dark:text-white">
+              <p className="text-sm font-medium text-gray-500 ">Passed</p>
+              <p className="text-2xl font-semibold text-gray-900 ">
                 {stats.passed}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <TrendingUp className="h-8 w-8 text-purple-600" />
             </div>
             <div className="ml-4">
-              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Average Score</p>
-              <p className="text-2xl font-semibold text-gray-900 dark:text-white">
+              <p className="text-sm font-medium text-gray-500 ">Average Score</p>
+              <p className="text-2xl font-semibold text-gray-900 ">
                 {stats.averageScore.toFixed(1)}%
               </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Award className="h-8 w-8 text-orange-600" />
             </div>
             <div className="ml-4">
-              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Highest Score</p>
-              <p className="text-2xl font-semibold text-gray-900 dark:text-white">
+              <p className="text-sm font-medium text-gray-500 ">Highest Score</p>
+              <p className="text-2xl font-semibold text-gray-900 ">
                 {stats.highestScore}%
               </p>
             </div>
@@ -315,16 +315,16 @@ const AssessmentResultsPage: React.FC = () => {
       </div>
 
       {/* Filters and Controls */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-8">
+      <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6 mb-8">
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700  mb-2">
               Filter Results
             </label>
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+              className="px-3 py-2 border border-gray-300  rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
             >
               <option value="all">All Results</option>
               <option value="passed">Passed ({stats.passed})</option>
@@ -333,13 +333,13 @@ const AssessmentResultsPage: React.FC = () => {
           </div>
           
           <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700  mb-2">
               Sort By
             </label>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+              className="px-3 py-2 border border-gray-300  rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
             >
               <option value="score">Score (High to Low)</option>
               <option value="name">Name (A to Z)</option>
@@ -350,9 +350,9 @@ const AssessmentResultsPage: React.FC = () => {
       </div>
 
       {/* Results Table */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-        <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+      <div className="bg-white  rounded-lg shadow-sm border border-gray-200 ">
+        <div className="px-6 py-4 border-b border-gray-200 ">
+          <h2 className="text-lg font-semibold text-gray-900 ">
             Candidate Results ({sortedResults.length})
           </h2>
         </div>
@@ -360,8 +360,8 @@ const AssessmentResultsPage: React.FC = () => {
         {sortedResults.length === 0 ? (
           <div className="p-12 text-center">
             <BarChart3 className="mx-auto h-12 w-12 text-gray-400" />
-            <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">No results found</h3>
-            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            <h3 className="mt-2 text-sm font-medium text-gray-900 ">No results found</h3>
+            <p className="mt-1 text-sm text-gray-500 ">
               {filterStatus === 'all' 
                 ? 'No candidates have completed this assessment yet.'
                 : `No candidates ${filterStatus} the assessment.`
@@ -370,35 +370,35 @@ const AssessmentResultsPage: React.FC = () => {
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-              <thead className="bg-gray-50 dark:bg-gray-900">
+            <table className="min-w-full divide-y divide-gray-200 ">
+              <thead className="bg-gray-50 ">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  uppercase tracking-wider">
                     Candidate
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  uppercase tracking-wider">
                     Score
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  uppercase tracking-wider">
                     Status
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  uppercase tracking-wider">
                     Completed
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500  uppercase tracking-wider">
                     Application Status
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+              <tbody className="bg-white  divide-y divide-gray-200 ">
                 {sortedResults.map((result) => (
-                  <tr key={result.id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                  <tr key={result.id} className="hover:bg-gray-50 :bg-gray-700">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div>
-                        <div className="text-sm font-medium text-gray-900 dark:text-white">
+                        <div className="text-sm font-medium text-gray-900 ">
                           {result.userName}
                         </div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">
+                        <div className="text-sm text-gray-500 ">
                           {result.userEmail}
                         </div>
                       </div>
@@ -414,20 +414,20 @@ const AssessmentResultsPage: React.FC = () => {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                         result.assessmentScore >= (assessment.passingScore || 70)
-                          ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
-                          : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300'
+                          ? 'bg-green-100 text-green-800  '
+                          : 'bg-red-100 text-red-800  '
                       }`}>
                         {result.assessmentScore >= (assessment.passingScore || 70) ? 'Passed' : 'Failed'}
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 ">
                       <div className="flex items-center">
                         <Calendar className="h-3 w-3 mr-1" />
                         {new Date(result.appliedAt).toLocaleDateString()}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800  ">
                         {result.status}
                       </span>
                     </td>

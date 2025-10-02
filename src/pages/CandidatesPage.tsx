@@ -218,8 +218,8 @@ const CandidatesPage: React.FC = () => {
       {/* Header */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Candidates</h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <h1 className="text-2xl font-bold text-gray-900 ">Candidates</h1>
+          <p className="text-gray-600 ">
             Manage and track candidate applications
           </p>
         </div>
@@ -230,7 +230,7 @@ const CandidatesPage: React.FC = () => {
       </div>
 
       {/* Filters */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+      <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <div className="relative">
@@ -240,7 +240,7 @@ const CandidatesPage: React.FC = () => {
                 placeholder="Search candidates..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
               />
             </div>
           </div>
@@ -248,7 +248,7 @@ const CandidatesPage: React.FC = () => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+              className="w-full px-4 py-2 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
             >
               <option value="all">All Statuses</option>
               <option value="Applied">Applied</option>
@@ -264,62 +264,62 @@ const CandidatesPage: React.FC = () => {
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Candidates</p>
-              <p className="text-2xl font-bold text-gray-900 dark:text-white">{candidates.length}</p>
+              <p className="text-sm font-medium text-gray-600 ">Total Candidates</p>
+              <p className="text-2xl font-bold text-gray-900 ">{candidates.length}</p>
             </div>
-            <div className="h-8 w-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
-              <span className="text-blue-600 dark:text-blue-400 text-sm font-medium">TC</span>
+            <div className="h-8 w-8 bg-blue-100  rounded-lg flex items-center justify-center">
+              <span className="text-blue-600  text-sm font-medium">TC</span>
             </div>
           </div>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Applied</p>
-              <p className="text-2xl font-bold text-gray-900 dark:text-white">
+              <p className="text-sm font-medium text-gray-600 ">Applied</p>
+              <p className="text-2xl font-bold text-gray-900 ">
                 {candidates.filter(c => c.status === 'Applied').length}
               </p>
             </div>
-            <div className="h-8 w-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
-              <span className="text-blue-600 dark:text-blue-400 text-sm font-medium">AP</span>
+            <div className="h-8 w-8 bg-blue-100  rounded-lg flex items-center justify-center">
+              <span className="text-blue-600  text-sm font-medium">AP</span>
             </div>
           </div>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">In Interview</p>
-              <p className="text-2xl font-bold text-gray-900 dark:text-white">
+              <p className="text-sm font-medium text-gray-600 ">In Interview</p>
+              <p className="text-2xl font-bold text-gray-900 ">
                 {candidates.filter(c => c.status === 'Interview').length}
               </p>
             </div>
-            <div className="h-8 w-8 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center">
-              <span className="text-purple-600 dark:text-purple-400 text-sm font-medium">IV</span>
+            <div className="h-8 w-8 bg-purple-100  rounded-lg flex items-center justify-center">
+              <span className="text-purple-600  text-sm font-medium">IV</span>
             </div>
           </div>
         </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div className="bg-white  rounded-lg shadow-sm border border-gray-200  p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Hired</p>
-              <p className="text-2xl font-bold text-gray-900 dark:text-white">
+              <p className="text-sm font-medium text-gray-600 ">Hired</p>
+              <p className="text-2xl font-bold text-gray-900 ">
                 {candidates.filter(c => c.status === 'Hired').length}
               </p>
             </div>
-            <div className="h-8 w-8 bg-emerald-100 dark:bg-emerald-900 rounded-lg flex items-center justify-center">
-              <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium">HD</span>
+            <div className="h-8 w-8 bg-emerald-100  rounded-lg flex items-center justify-center">
+              <span className="text-emerald-600  text-sm font-medium">HD</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Candidates Table */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-        <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-          <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+      <div className="bg-white  rounded-lg shadow-sm border border-gray-200 ">
+        <div className="px-6 py-4 border-b border-gray-200 ">
+          <h3 className="text-lg font-medium text-gray-900 ">
             Candidates ({filteredCandidates.length})
           </h3>
         </div>
@@ -341,7 +341,7 @@ const CandidatesPage: React.FC = () => {
               {visibleCandidates.map((candidate) => (
                 <div
                   key={candidate.id}
-                  className="flex items-center px-6 py-4 border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  className="flex items-center px-6 py-4 border-b border-gray-200  hover:bg-gray-50 :bg-gray-700 transition-colors"
                   style={{ height: rowHeight }}
                 >
                   <div className="flex-1 grid grid-cols-12 gap-4 items-center">
@@ -353,13 +353,13 @@ const CandidatesPage: React.FC = () => {
                           </span>
                         </div>
                         <div>
-                          <p className="font-medium text-gray-900 dark:text-white">{candidate.name}</p>
-                          <p className="text-sm text-gray-500 dark:text-gray-400">{candidate.email}</p>
+                          <p className="font-medium text-gray-900 ">{candidate.name}</p>
+                          <p className="text-sm text-gray-500 ">{candidate.email}</p>
                         </div>
                       </div>
                     </div>
                     <div className="col-span-2">
-                      <p className="text-gray-900 dark:text-white">{candidate.position}</p>
+                      <p className="text-gray-900 ">{candidate.position}</p>
                     </div>
                     <div className="col-span-2">
                       <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(candidate.status)}`}>
@@ -367,10 +367,10 @@ const CandidatesPage: React.FC = () => {
                       </span>
                     </div>
                     <div className="col-span-2">
-                      <p className="text-gray-900 dark:text-white">{candidate.experience}</p>
+                      <p className="text-gray-900 ">{candidate.experience}</p>
                     </div>
                     <div className="col-span-2">
-                      <p className="text-gray-500 dark:text-gray-400">
+                      <p className="text-gray-500 ">
                         {new Date(candidate.appliedAt).toLocaleDateString()}
                       </p>
                     </div>
@@ -402,8 +402,8 @@ const CandidatesPage: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
-          <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">No candidates found</h3>
-          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+          <h3 className="mt-2 text-sm font-medium text-gray-900 ">No candidates found</h3>
+          <p className="mt-1 text-sm text-gray-500 ">
             {searchTerm || statusFilter !== 'all' 
               ? 'Try adjusting your search or filter criteria.'
               : 'Get started by adding your first candidate.'
@@ -415,12 +415,12 @@ const CandidatesPage: React.FC = () => {
       {/* Add Candidate Modal */}
       {showAddModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full mx-4">
-            <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Add New Candidate</h3>
+          <div className="bg-white  rounded-lg shadow-xl max-w-md w-full mx-4">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 ">
+              <h3 className="text-lg font-semibold text-gray-900 ">Add New Candidate</h3>
               <button
                 onClick={() => setShowAddModal(false)}
-                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                className="text-gray-400 hover:text-gray-600 :text-gray-300"
               >
                 <X className="h-6 w-6" />
               </button>
@@ -428,65 +428,65 @@ const CandidatesPage: React.FC = () => {
             
             <div className="p-6 space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-gray-700  mb-1">
                   Full Name *
                 </label>
                 <input
                   type="text"
                   value={newCandidate.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-3 py-2 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
                   placeholder="Enter full name"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-gray-700  mb-1">
                   Email *
                 </label>
                 <input
                   type="email"
                   value={newCandidate.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-3 py-2 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
                   placeholder="Enter email address"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-gray-700  mb-1">
                   Position *
                 </label>
                 <input
                   type="text"
                   value={newCandidate.position}
                   onChange={(e) => handleInputChange('position', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-3 py-2 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
                   placeholder="Enter position title"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-gray-700  mb-1">
                   Experience
                 </label>
                 <input
                   type="text"
                   value={newCandidate.experience}
                   onChange={(e) => handleInputChange('experience', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-3 py-2 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
                   placeholder="e.g., 5 years"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-gray-700  mb-1">
                   Status
                 </label>
                 <select
                   value={newCandidate.status}
                   onChange={(e) => handleInputChange('status', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-3 py-2 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  "
                 >
                   <option value="Applied">Applied</option>
                   <option value="Screening">Screening</option>
@@ -498,7 +498,7 @@ const CandidatesPage: React.FC = () => {
               </div>
             </div>
             
-            <div className="flex justify-end gap-3 p-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex justify-end gap-3 p-6 border-t border-gray-200 ">
               <Button
                 variant="outline"
                 onClick={() => setShowAddModal(false)}

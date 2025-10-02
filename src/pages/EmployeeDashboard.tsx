@@ -112,17 +112,17 @@ const EmployeeDashboard: React.FC = () => {
     <div className="space-y-6">
       {/* Header */}
       <div>
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+                <h1 className="text-2xl font-bold text-gray-900 ">
                   Welcome back, {user?.name}!
                 </h1>
-                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                <p className="mt-1 text-sm text-gray-500 ">
                   Here's what's happening with your job applications today.
                 </p>
               </div>
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
+                <div className="bg-white  overflow-hidden shadow rounded-lg">
                   <div className="p-5">
                     <div className="flex items-center">
                       <div className="flex-shrink-0">
@@ -130,10 +130,10 @@ const EmployeeDashboard: React.FC = () => {
                       </div>
                       <div className="ml-5 w-0 flex-1">
                         <dl>
-                          <dt className="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
+                          <dt className="text-sm font-medium text-gray-500  truncate">
                             Applied Jobs
                           </dt>
-                  <dd className="text-2xl font-bold text-gray-900 dark:text-white">
+                  <dd className="text-2xl font-bold text-gray-900 ">
                             {stats.appliedJobs}
                           </dd>
                         </dl>
@@ -142,7 +142,7 @@ const EmployeeDashboard: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
+                <div className="bg-white  overflow-hidden shadow rounded-lg">
                   <div className="p-5">
                     <div className="flex items-center">
                       <div className="flex-shrink-0">
@@ -150,10 +150,10 @@ const EmployeeDashboard: React.FC = () => {
                       </div>
                       <div className="ml-5 w-0 flex-1">
                         <dl>
-                          <dt className="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
+                          <dt className="text-sm font-medium text-gray-500  truncate">
                             Interviews
                           </dt>
-                  <dd className="text-2xl font-bold text-gray-900 dark:text-white">
+                  <dd className="text-2xl font-bold text-gray-900 ">
                             {stats.interviews}
                           </dd>
                         </dl>
@@ -162,7 +162,7 @@ const EmployeeDashboard: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
+                <div className="bg-white  overflow-hidden shadow rounded-lg">
                   <div className="p-5">
                     <div className="flex items-center">
                       <div className="flex-shrink-0">
@@ -170,10 +170,10 @@ const EmployeeDashboard: React.FC = () => {
                       </div>
                       <div className="ml-5 w-0 flex-1">
                         <dl>
-                          <dt className="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
+                          <dt className="text-sm font-medium text-gray-500  truncate">
                             Assessments
                           </dt>
-                  <dd className="text-2xl font-bold text-gray-900 dark:text-white">
+                  <dd className="text-2xl font-bold text-gray-900 ">
                             {stats.assessments}
                           </dd>
                         </dl>
@@ -182,7 +182,7 @@ const EmployeeDashboard: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
+                <div className="bg-white  overflow-hidden shadow rounded-lg">
                   <div className="p-5">
                     <div className="flex items-center">
                       <div className="flex-shrink-0">
@@ -190,10 +190,10 @@ const EmployeeDashboard: React.FC = () => {
                       </div>
                       <div className="ml-5 w-0 flex-1">
                         <dl>
-                          <dt className="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
+                          <dt className="text-sm font-medium text-gray-500  truncate">
                             Notifications
                           </dt>
-                  <dd className="text-2xl font-bold text-gray-900 dark:text-white">
+                  <dd className="text-2xl font-bold text-gray-900 ">
                             {stats.notifications}
                           </dd>
                         </dl>
@@ -206,10 +206,10 @@ const EmployeeDashboard: React.FC = () => {
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Applications */}
-                <div className="bg-white dark:bg-gray-800 shadow rounded-lg">
-          <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+                <div className="bg-white  shadow rounded-lg">
+          <div className="px-6 py-4 border-b border-gray-200 ">
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+              <h3 className="text-lg font-medium text-gray-900 ">
                 Recent Applications
                     </h3>
               <Link
@@ -220,19 +220,19 @@ const EmployeeDashboard: React.FC = () => {
               </Link>
             </div>
           </div>
-          <div className="divide-y divide-gray-200 dark:divide-gray-700">
+          <div className="divide-y divide-gray-200 ">
             {recentJobs.length > 0 ? (
               recentJobs.map((job) => (
                 <div key={job.id} className="p-6">
                   <div className="flex items-center justify-between">
                             <div className="flex-1">
-                              <h4 className="text-sm font-medium text-gray-900 dark:text-white">
+                              <h4 className="text-sm font-medium text-gray-900 ">
                         {job.jobTitle}
                               </h4>
-                              <p className="text-sm text-gray-500 dark:text-gray-400">
+                              <p className="text-sm text-gray-500 ">
                         {job.company}
                               </p>
-                      <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
+                      <p className="text-xs text-gray-400  mt-1">
                         Applied {new Date(job.appliedAt).toLocaleDateString()}
                               </p>
                             </div>
@@ -245,10 +245,10 @@ const EmployeeDashboard: React.FC = () => {
             ) : (
               <div className="p-6 text-center">
                 <Briefcase className="mx-auto h-12 w-12 text-gray-400" />
-                <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">
+                <h3 className="mt-2 text-sm font-medium text-gray-900 ">
                   No applications yet
                 </h3>
-                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                <p className="mt-1 text-sm text-gray-500 ">
                   Start applying to jobs to see them here.
                 </p>
                 <div className="mt-6">
@@ -265,13 +265,13 @@ const EmployeeDashboard: React.FC = () => {
                 </div>
 
                 {/* Upcoming Events */}
-                <div className="bg-white dark:bg-gray-800 shadow rounded-lg">
-          <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                <div className="bg-white  shadow rounded-lg">
+          <div className="px-6 py-4 border-b border-gray-200 ">
+            <h3 className="text-lg font-medium text-gray-900 ">
                       Upcoming Events
                     </h3>
           </div>
-          <div className="divide-y divide-gray-200 dark:divide-gray-700">
+          <div className="divide-y divide-gray-200 ">
                         {upcomingEvents.map((event) => (
               <div key={event.id} className="p-6">
                 <div className="flex items-center">
@@ -283,10 +283,10 @@ const EmployeeDashboard: React.FC = () => {
                     )}
                             </div>
                             <div className="ml-4 flex-1">
-                              <h4 className="text-sm font-medium text-gray-900 dark:text-white">
+                              <h4 className="text-sm font-medium text-gray-900 ">
                                 {event.title}
                               </h4>
-                              <p className="text-sm text-gray-500 dark:text-gray-400">
+                              <p className="text-sm text-gray-500 ">
                       {event.date}
                               </p>
                             </div>
@@ -298,9 +298,9 @@ const EmployeeDashboard: React.FC = () => {
                   </div>
 
       {/* Quick Actions */}
-      <div className="bg-white dark:bg-gray-800 shadow rounded-lg">
-        <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-          <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+      <div className="bg-white  shadow rounded-lg">
+        <div className="px-6 py-4 border-b border-gray-200 ">
+          <h3 className="text-lg font-medium text-gray-900 ">
             Quick Actions
           </h3>
         </div>
@@ -308,17 +308,17 @@ const EmployeeDashboard: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <Link
               to="/employee/jobs"
-              className="relative rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 dark:hover:border-gray-500 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
+              className="relative rounded-lg border border-gray-300  bg-white  px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 :border-gray-500 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
             >
               <div className="flex-shrink-0">
                 <Briefcase className="h-6 w-6 text-blue-600" />
               </div>
               <div className="flex-1 min-w-0">
                 <span className="absolute inset-0" aria-hidden="true" />
-                <p className="text-sm font-medium text-gray-900 dark:text-white">
+                <p className="text-sm font-medium text-gray-900 ">
                   Browse Jobs
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-gray-500 ">
                   Find new opportunities
                 </p>
               </div>
@@ -326,17 +326,17 @@ const EmployeeDashboard: React.FC = () => {
 
             <Link
               to="/employee/applications"
-              className="relative rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 dark:hover:border-gray-500 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
+              className="relative rounded-lg border border-gray-300  bg-white  px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 :border-gray-500 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
             >
               <div className="flex-shrink-0">
                 <FileText className="h-6 w-6 text-green-600" />
               </div>
               <div className="flex-1 min-w-0">
                 <span className="absolute inset-0" aria-hidden="true" />
-                <p className="text-sm font-medium text-gray-900 dark:text-white">
+                <p className="text-sm font-medium text-gray-900 ">
                   My Applications
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-gray-500 ">
                   Track your applications
                 </p>
               </div>
@@ -344,17 +344,17 @@ const EmployeeDashboard: React.FC = () => {
 
             <Link
               to="/employee/assessments"
-              className="relative rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 dark:hover:border-gray-500 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
+              className="relative rounded-lg border border-gray-300  bg-white  px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 :border-gray-500 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
             >
               <div className="flex-shrink-0">
                 <TrendingUp className="h-6 w-6 text-purple-600" />
               </div>
               <div className="flex-1 min-w-0">
                 <span className="absolute inset-0" aria-hidden="true" />
-                <p className="text-sm font-medium text-gray-900 dark:text-white">
+                <p className="text-sm font-medium text-gray-900 ">
                   Assessments
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-gray-500 ">
                   Take skill assessments
                 </p>
                 </div>
@@ -362,17 +362,17 @@ const EmployeeDashboard: React.FC = () => {
 
             <Link
               to="/employee/profile"
-              className="relative rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 dark:hover:border-gray-500 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
+              className="relative rounded-lg border border-gray-300  bg-white  px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 :border-gray-500 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
             >
               <div className="flex-shrink-0">
                 <Calendar className="h-6 w-6 text-yellow-600" />
               </div>
               <div className="flex-1 min-w-0">
                 <span className="absolute inset-0" aria-hidden="true" />
-                <p className="text-sm font-medium text-gray-900 dark:text-white">
+                <p className="text-sm font-medium text-gray-900 ">
                   Profile
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-sm text-gray-500 ">
                   Update your profile
                 </p>
             </div>
