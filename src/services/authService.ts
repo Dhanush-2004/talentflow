@@ -79,7 +79,10 @@ class AuthService {
     }
 
     // For demo purposes, accept any password
-    const token = `mock-jwt-token-${Date.now()}`
+    const token = `mock-jwt-token-${user.id}-${Date.now()}`
+    
+    // Store the user ID in the token for getCurrentUser
+    localStorage.setItem('current_user_id', user.id)
     
     return this.mockRequest({
       user,
@@ -107,7 +110,10 @@ class AuthService {
     // Add to mock users
     mockUsers.push(newUser)
     
-    const token = `mock-jwt-token-${Date.now()}`
+    const token = `mock-jwt-token-${newUser.id}-${Date.now()}`
+    
+    // Store the user ID in the token for getCurrentUser
+    localStorage.setItem('current_user_id', newUser.id)
     
     return this.mockRequest({
       user: newUser,
@@ -123,9 +129,14 @@ class AuthService {
       throw new Error('Invalid token')
     }
 
-    // For demo, return the first mock user
-    // In a real app, you'd decode the token to get user ID
-    const user = mockUsers[0]
+    // Get the stored user ID
+    const userId = localStorage.getItem('current_user_id')
+    if (!userId) {
+      throw new Error('User ID not found')
+    }
+
+    // Find the user by ID
+    const user = mockUsers.find(u => u.id === userId)
     if (!user) {
       throw new Error('User not found')
     }
@@ -173,6 +184,7 @@ class AuthService {
 
   logout(): void {
     localStorage.removeItem('token')
+    localStorage.removeItem('current_user_id')
     console.log('Mock logout called')
   }
 }

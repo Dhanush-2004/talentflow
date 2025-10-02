@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef, UIEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import { 
   Plus, Eye, Edit, Trash2, Search, X
@@ -16,11 +17,16 @@ interface Candidate {
 }
 
 const CandidatesPage: React.FC = () => {
+  const navigate = useNavigate();
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [showAddModal, setShowAddModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [editingCandidate, setEditingCandidate] = useState<Candidate | null>(null);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [candidateToDelete, setCandidateToDelete] = useState<Candidate | null>(null);
   const [newCandidate, setNewCandidate] = useState({
     name: '',
     email: '',
@@ -184,6 +190,55 @@ const CandidatesPage: React.FC = () => {
       ...prev,
       [field]: value
     }));
+  };
+
+  const handleViewCandidate = (candidate: Candidate) => {
+    navigate(`/recruiter/candidates/${candidate.id}`);
+  };
+
+  const handleEditCandidate = (candidate: Candidate) => {
+    setEditingCandidate(candidate);
+    setShowEditModal(true);
+  };
+
+  const handleUpdateCandidate = () => {
+    if (!editingCandidate) return;
+
+    const updatedCandidates = candidates.map(c => 
+      c.id === editingCandidate.id ? editingCandidate : c
+    );
+    
+    setCandidates(updatedCandidates);
+    localStorage.setItem('mockCandidates', JSON.stringify(updatedCandidates));
+    
+    setShowEditModal(false);
+    setEditingCandidate(null);
+    alert('Candidate updated successfully!');
+  };
+
+  const handleDeleteCandidate = (candidate: Candidate) => {
+    setCandidateToDelete(candidate);
+    setShowDeleteModal(true);
+  };
+
+  const confirmDeleteCandidate = () => {
+    if (!candidateToDelete) return;
+
+    const updatedCandidates = candidates.filter(c => c.id !== candidateToDelete.id);
+    setCandidates(updatedCandidates);
+    localStorage.setItem('mockCandidates', JSON.stringify(updatedCandidates));
+    
+    setShowDeleteModal(false);
+    setCandidateToDelete(null);
+    alert('Candidate deleted successfully!');
+  };
+
+  const handleEditInputChange = (field: string, value: string) => {
+    if (!editingCandidate) return;
+    setEditingCandidate(prev => prev ? ({
+      ...prev,
+      [field]: value
+    }) : null);
   };
 
   const getStatusColor = (status: Candidate['status']) => {
@@ -376,13 +431,29 @@ const CandidatesPage: React.FC = () => {
                     </div>
                     <div className="col-span-1">
                       <div className="flex items-center space-x-2">
-                        <Button variant="outline" size="sm">
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => handleViewCandidate(candidate)}
+                          title="View candidate details"
+                        >
                           <Eye className="h-4 w-4" />
                         </Button>
-                        <Button variant="outline" size="sm">
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => handleEditCandidate(candidate)}
+                          title="Edit candidate"
+                        >
                           <Edit className="h-4 w-4" />
                         </Button>
-                        <Button variant="outline" size="sm" className="text-red-600 hover:text-red-700">
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="text-red-600 hover:text-red-700"
+                          onClick={() => handleDeleteCandidate(candidate)}
+                          title="Delete candidate"
+                        >
                           <Trash2 className="h-4 w-4" />
                         </Button>
                       </div>
@@ -507,6 +578,146 @@ const CandidatesPage: React.FC = () => {
               </Button>
               <Button onClick={handleAddCandidate}>
                 Add Candidate
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Edit Candidate Modal */}
+      {showEditModal && editingCandidate && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-900">Edit Candidate</h3>
+              <button
+                onClick={() => setShowEditModal(false)}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            
+            <div className="p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  value={editingCandidate.name}
+                  onChange={(e) => handleEditInputChange('name', e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Enter full name"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  value={editingCandidate.email}
+                  onChange={(e) => handleEditInputChange('email', e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Enter email address"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Position *
+                </label>
+                <input
+                  type="text"
+                  value={editingCandidate.position}
+                  onChange={(e) => handleEditInputChange('position', e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Enter position title"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Experience
+                </label>
+                <input
+                  type="text"
+                  value={editingCandidate.experience}
+                  onChange={(e) => handleEditInputChange('experience', e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="e.g., 5 years"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Status
+                </label>
+                <select
+                  value={editingCandidate.status}
+                  onChange={(e) => handleEditInputChange('status', e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+                  <option value="Applied">Applied</option>
+                  <option value="Screening">Screening</option>
+                  <option value="Interview">Interview</option>
+                  <option value="Offer">Offer</option>
+                  <option value="Hired">Hired</option>
+                  <option value="Rejected">Rejected</option>
+                </select>
+              </div>
+            </div>
+            
+            <div className="flex justify-end gap-3 p-6 border-t border-gray-200">
+              <Button
+                variant="outline"
+                onClick={() => setShowEditModal(false)}
+              >
+                Cancel
+              </Button>
+              <Button onClick={handleUpdateCandidate}>
+                Update Candidate
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {showDeleteModal && candidateToDelete && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4">
+            <div className="p-6">
+              <div className="flex items-center mb-4">
+                <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
+                  <Trash2 className="h-6 w-6 text-red-600" />
+                </div>
+              </div>
+              <div className="text-center">
+                <h3 className="text-lg font-medium text-gray-900 mb-2">
+                  Delete Candidate
+                </h3>
+                <p className="text-sm text-gray-500 mb-4">
+                  Are you sure you want to delete <strong>{candidateToDelete.name}</strong>? 
+                  This action cannot be undone.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex justify-end gap-3 p-6 border-t border-gray-200">
+              <Button
+                variant="outline"
+                onClick={() => setShowDeleteModal(false)}
+              >
+                Cancel
+              </Button>
+              <Button 
+                onClick={confirmDeleteCandidate}
+                className="bg-red-600 hover:bg-red-700 text-white"
+              >
+                Delete
               </Button>
             </div>
           </div>
